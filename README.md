@@ -5,7 +5,8 @@ The standard workflow is:
 2. Then you fill it with functions that start with ‘test_’.
 3. You run the tests by placing unittest.main() in your file, usually at the bottom.
 
-```import unittest
+```python
+import unittest
 from math import *
  
 class TestUM(unittest.TestCase):
