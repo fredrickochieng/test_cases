@@ -4,6 +4,7 @@ The standard workflow is:
 1. You define your own class derived from unittest.TestCase.
 2. Then you fill it with functions that start with ‘test_’.
 3. You run the tests by placing unittest.main() in your file, usually at the bottom.
+This is a pass test ,it checks whether the products of two inputs gives the right answer
 
 ```python
 import unittest
