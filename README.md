@@ -57,3 +57,32 @@ if __name__ == '__main__':#4 failed test cases
 unittest.main()
 ```
 
+skipping testcase
+Unittest supports skipping individual test methods and even whole classes of tests.It also supports marking a test as an “expected failure,” a test that is broken and will fail, but shouldn’t be counted as a failure on a TestResult.
+
+Skipping a test is simply a matter of using the skip() decorator 
+
+
+``python`
+mport unittest
+
+class MyTestCase(unittest.TestCase):
+
+    @unittest.skip("demonstrating skipping")
+    def test_nothing(self):
+        self.fail("shouldn't happen")
+
+    @unittest.skipIf(mylib.__version__ < (1, 3),
+                     "not supported in this library version")
+    def test_format(self):
+        # Tests that work for only a certain version of the library.
+        pass
+
+    @unittest.skipUnless(sys.platform.startswith("win"), "requires Windows")
+    def test_windows_support(self):
+        # windows specific testing code
+        pass
+if __name__ == '__main__':#2 failed test cases
+unittest.main()
+```
+
