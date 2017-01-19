@@ -83,6 +83,31 @@ class MyTestCase(unittest.TestCase):
         # windows specific testing code
         pass
 if __name__ == '__main__':#2 failed test cases
-unittest.main()
-```
+unittest.main()```
 
+
+String method testcase
+
+
+```python
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('idiot'.upper(), 'IDIOT')
+
+    def test_isupper(self):
+        self.assertTrue('IDIOT'.isupper())
+        self.assertFalse('Idiot'.isupper())
+
+    def test_split(self):
+        s = 'hello Andela'
+        self.assertEqual(s.split(), ['hello', 'Andela'])
+        
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+suite = unittest.TestLoader().loadTestsFromTestCase(TestStringMethods)
+unittest.TextTestRunner(verbosity=2).run(suite)
+```
